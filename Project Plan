@@ -11,9 +11,10 @@ o	This package would include all of the Account classes
 
 •	Account Console View Package – Ken  L
 o	This package includes all classes of the menu items that associate with Accounts, including:
-	DisplayAccounts.java
+	AccountsSummary.java
 	AddAccount.java
-	ChooseAccounts.java
+	DisplayAccount.java
+ ManageAccounts.java
 
 •	Contacts Model Package Kenny T
 o	This package would include all of the Customer classes
