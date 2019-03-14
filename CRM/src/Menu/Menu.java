@@ -7,7 +7,7 @@ package Menu;
 
 /**
  *
- * @author Jomar Mendoza
+ * @author Jomar Mendoza master branch
  */
 import static Menu.MenuConsole.getChoice;
 import java.util.ArrayList;
