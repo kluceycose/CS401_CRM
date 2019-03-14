@@ -15,14 +15,14 @@ package Contact.model;
 public class Contact {
 
     private String name;
-    private String phoneNumber;
     private String email;
+    private String phoneNumber;
 
     //Constructor
-    public Contact(String name, String phoneNumber, String email) {
+    public Contact(String name, String email, String phoneNumber) {
         this.name = name;
-        this.phoneNumber = phoneNumber;
         this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
     // Getters and Setter below
@@ -33,6 +33,14 @@ public class Contact {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -40,13 +48,5 @@ public class Contact {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }

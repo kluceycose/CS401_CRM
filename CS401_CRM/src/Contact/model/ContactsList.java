@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Contact.view;
+package Contact.model;
 
-import Contact.model.Contact;
 import java.util.ArrayList;
 
 /**
@@ -20,15 +19,23 @@ public class ContactsList {
     private final ArrayList<Contact> contactsList;
     private String listName;
 
+    // Constructor for single Contact
     public ContactsList(Contact contact) {
         contactsList = new ArrayList<>();
         contactsList.add(contact);
     }
 
+    // Constructor for list of Contacts
     public ContactsList(ArrayList<Contact> contactList) {
         this.contactsList = contactList;
     }
-
+    
+    // Adds a Contact object to the list
+    public void add(Contact contact) {
+        getContactsList().add(contact);
+    }
+    
+    // Getters and setters below
     public ArrayList<Contact> getContactsList() {
         return contactsList;
     }
