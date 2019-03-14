@@ -5,6 +5,10 @@ package model;
  * @author kluceycose
  */
 
+/*
+ * This class holds the full list of Accounts that have been created
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 

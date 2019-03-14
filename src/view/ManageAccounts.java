@@ -1,8 +1,11 @@
 package view;
 
 /**
- *
  * @author kluceycose
+ */
+
+/*
+ * This class will create a new submenu for working with accounts
  */
 
 import Menu.Menu;
@@ -22,11 +25,10 @@ public class ManageAccounts implements MenuItem {
 
     public void execute(){
         Menu submenu = new Menu("Accounts", menus);
-        submenu.add(new QuitCmd());
-        submenu.add(new ReturnfromMenu(mainMenu.toString(), menus));
-        submenu.add(new AccountsSummary(accountList));
-        submenu.add(new DisplayAccount(accountList));
-        submenu.add(new AddAccount(accountList));
+        //submenu.add(new ReturnfromMenu(mainMenu.toString(), menus));
+        submenu.addOption(new AccountsSummary(accountList));
+        submenu.addOption(new DisplayAccount(accountList));
+        submenu.addOption(new AddAccount(accountList));
         submenu.execute();
     }
 

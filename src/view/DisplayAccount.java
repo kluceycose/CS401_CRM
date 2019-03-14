@@ -5,6 +5,10 @@ package view;
  * @author kluceycose
  */
 
+/*
+ * This class will display the details of a single account
+ */
+
 import Menu.MenuItem;
 import model.Account;
 import model.AccountList;
