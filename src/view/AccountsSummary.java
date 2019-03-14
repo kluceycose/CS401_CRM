@@ -1,5 +1,11 @@
 package view;
 
+/**
+ *
+ * @author kluceycose
+ */
+
+import Menu.MenuItem;
 import model.Account;
 import model.AccountList;
 

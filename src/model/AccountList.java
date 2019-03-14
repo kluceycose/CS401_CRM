@@ -1,5 +1,10 @@
 package model;
 
+/**
+ *
+ * @author kluceycose
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 

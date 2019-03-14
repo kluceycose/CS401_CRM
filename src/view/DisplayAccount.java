@@ -1,11 +1,17 @@
 package view;
 
+/**
+ *
+ * @author kluceycose
+ */
+
+import Menu.MenuItem;
 import model.Account;
 import model.AccountList;
 
 import java.util.Scanner;
 
-public class DisplayAccount implements MenuItem{
+public class DisplayAccount implements MenuItem {
     AccountList accountList;
 
     public DisplayAccount(AccountList _accountList){
