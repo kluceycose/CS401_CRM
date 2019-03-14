@@ -1,5 +1,15 @@
 package view;
 
+/**
+ *
+ * @author kluceycose
+ */
+
+/*
+ * This class will show the account ID and account name of all accounts on file
+ */
+
+import Menu.MenuItem;
 import model.Account;
 import model.AccountList;
 

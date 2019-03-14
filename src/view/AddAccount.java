@@ -1,5 +1,16 @@
 package view;
 
+/**
+ *
+ * @author kluceycose
+ */
+
+/*
+ * This class will ask for the details to create a new Account, and
+ * add it to the AccountList
+ */
+
+import Menu.MenuItem;
 import model.Account;
 import model.AccountList;
 

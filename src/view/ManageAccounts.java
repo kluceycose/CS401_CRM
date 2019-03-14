@@ -1,8 +1,19 @@
 package view;
 
+/**
+ * @author kluceycose
+ */
+
+/*
+ * This class will create a new submenu for working with accounts
+ */
+
+import Menu.Menu;
+import Menu.MenuItem;
+import Menu.MenuStack;
 import model.AccountList;
 
-public class ManageAccounts implements MenuItem{
+public class ManageAccounts implements MenuItem {
     Menu mainMenu;
     MenuStack menus;
     AccountList accountList;
@@ -14,11 +25,10 @@ public class ManageAccounts implements MenuItem{
 
     public void execute(){
         Menu submenu = new Menu("Accounts", menus);
-        submenu.add(new QuitCmd());
-        submenu.add(new ReturnfromMenu(mainMenu.toString(), menus));
-        submenu.add(new AccountsSummary(accountList));
-        submenu.add(new DisplayAccount(accountList));
-        submenu.add(new AddAccount(accountList));
+        //submenu.add(new ReturnfromMenu(mainMenu.toString(), menus));
+        submenu.addOption(new AccountsSummary(accountList));
+        submenu.addOption(new DisplayAccount(accountList));
+        submenu.addOption(new AddAccount(accountList));
         submenu.execute();
     }
 

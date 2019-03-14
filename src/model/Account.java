@@ -1,5 +1,14 @@
 package model;
 
+/**
+ *
+ * @author kluceycose
+ */
+
+/*
+ * This class holds all the relevant information for an Account
+ */
+
 import java.util.Date;
 
 public class Account {
