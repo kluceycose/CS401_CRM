@@ -16,7 +16,10 @@ import Accounts.AccountList;
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class AddAccount implements MenuItem {
@@ -30,19 +33,18 @@ public class AddAccount implements MenuItem {
         Scanner STDIN = new Scanner(System.in);
         String name, stringDate;
         int amount, id = accountList.getList().size(), contactId = -1;
-        Date date;
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar date = new GregorianCalendar();
         System.out.println("Enter Account name: ");
         name = STDIN.nextLine();
         System.out.println("Enter Account value: ");
-        amount = STDIN.nextInt();
-        System.out.println("Enter Close Date (dd/mm/yy): ");
-        try {
-            date = DateFormat.getDateInstance().parse(STDIN.nextLine());
-        }
-        catch(ParseException pe){
-            System.out.println("Parse Error: "+pe);
-            date = new Date();
-        }
+        amount = Integer.parseInt(STDIN.nextLine());
+        System.out.println("Enter Close Date:\nDay (dd): ");
+        date.set(Calendar.DAY_OF_MONTH, Integer.parseInt(STDIN.nextLine()));
+        System.out.println("Month (mm): ");
+        date.set(Calendar.MONTH, Integer.parseInt(STDIN.nextLine()));
+        System.out.println("Year (yyyy): ");
+        date.set(Calendar.YEAR, Integer.parseInt(STDIN.nextLine()));
         System.out.println("Known contact? (y/n): ");
         if(STDIN.next().equals("y")){
                 System.out.println("Enter Contact ID: ");
