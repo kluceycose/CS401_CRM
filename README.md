@@ -28,3 +28,8 @@ Contacts Console View Package Kenny T<br/>
 This package includes all classes of the menu items that associate with Accounts, including:<br/>
 DisplayCustomers.java<br/>
 In a later version, we will likely implement more features surrounding customers<br/>
+
+User Story HW1:
+Sales manager launches application then creates a new account and adds a new contact to the account.<br/>
+Then the sales manager converts a lead into an opportunity.<br/>
+
