@@ -9,6 +9,8 @@ package Accounts;
  * Test class for the Account and AccountList classes
  */
 
+import Accounts.model.Account;
+import Accounts.model.AccountList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

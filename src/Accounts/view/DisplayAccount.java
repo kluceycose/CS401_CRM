@@ -1,4 +1,4 @@
-package Accounts;
+package Accounts.view;
 
 /**
  *
@@ -10,8 +10,8 @@ package Accounts;
  */
 
 import Menu.MenuItem;
-import Accounts.Account;
-import Accounts.AccountList;
+import Accounts.model.Account;
+import Accounts.model.AccountList;
 
 import java.util.Scanner;
 

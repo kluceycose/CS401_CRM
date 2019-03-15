@@ -1,4 +1,4 @@
-package Accounts;
+package Accounts.view;
 
 /**
  * @author kluceycose
@@ -8,6 +8,7 @@ package Accounts;
  * This class will create a new submenu for working with accounts
  */
 
+import Accounts.model.AccountList;
 import Menu.Menu;
 import Menu.MenuItem;
 import Menu.MenuStack;
