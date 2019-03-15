@@ -8,13 +8,14 @@ package Menu;
 /**
  *
  * @author Jomar
+ * Return to Previous Menu
  */
 public class ReturnFromMenu implements MenuItem{
-     private final String msg;
+     private final String name;
     private final MenuStack menus;
     
     public ReturnFromMenu(String prevMenuName, MenuStack menuStack) {
-        msg = "Return to " + prevMenuName;
+        name = "Return to " + prevMenuName;
         menus = menuStack;
     }
 
@@ -25,7 +26,7 @@ public class ReturnFromMenu implements MenuItem{
     
     @Override
     public String toString() {
-        return msg;
+        return name;
     }
     
 }

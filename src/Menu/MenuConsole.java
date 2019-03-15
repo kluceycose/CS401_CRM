@@ -23,7 +23,7 @@ public class MenuConsole {
      }
      public static <T> int getChoice (List<T> options){
          prompt(options);
-         System.out.println("Choose an option: (0 - " + (options.size() - 1));
+         System.out.println("Choose an option: (0 - " + (options.size() - 1) + "): ");
          return STDIN.nextInt();
      }
 }

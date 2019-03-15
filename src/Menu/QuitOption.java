@@ -8,6 +8,7 @@ package Menu;
 /**
  *
  * @author Jomar
+ * Option for Quitting
  */
 public class QuitOption implements MenuItem{
     @Override
