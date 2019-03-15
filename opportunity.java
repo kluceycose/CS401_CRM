@@ -1,3 +1,4 @@
+package Opportunities;
 import java.util.Date;
 
 public class opportunity {
