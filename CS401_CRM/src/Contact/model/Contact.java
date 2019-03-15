@@ -49,4 +49,10 @@ public class Contact {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    
+    // Returns all fields of Contact
+    @Override
+    public String toString() {
+        return (getName() + " " + getEmail() + " " + getPhoneNumber());
+    }
 }

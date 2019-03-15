@@ -47,4 +47,5 @@ public class ContactsList {
     public void setListName(String listName) {
         this.listName = listName;
     }
+    
 }

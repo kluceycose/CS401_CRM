@@ -8,6 +8,8 @@ package Contact.view;
 /**
  *
  * @author kenny
+ * 
+ * Interface inherited by views of Contact
  */
 public interface ContactsView {
     public void execute();
