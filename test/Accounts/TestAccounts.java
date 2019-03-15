@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import static org.junit.Assert.*;
 
@@ -25,10 +26,10 @@ public class TestAccounts {
 
     @Before
     public void setUp(){
-        account = new Account(1, 12000, new Date(), "Account 1", 2);
+        account = new Account(1, 12000, new GregorianCalendar(), "Account 1", 2);
         accountList = new AccountList();
         accountList.addAccount(account);
-        account = new Account(2, 16000, new Date(), "Account 2", 1);
+        account = new Account(2, 16000, new GregorianCalendar(), "Account 2", 1);
         accountList.addAccount(account);
     }
 

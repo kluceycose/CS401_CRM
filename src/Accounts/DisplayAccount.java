@@ -13,6 +13,7 @@ import Menu.MenuItem;
 import Accounts.Account;
 import Accounts.AccountList;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class DisplayAccount implements MenuItem {
@@ -31,7 +32,9 @@ public class DisplayAccount implements MenuItem {
             System.out.println("Account ID: "+account.getAccountId()+
                     "\nAccount Name: "+account.getAccountName()+
                     "\nAmount: $"+account.getAmount()+
-                    "\nClose Date: "+account.getCloseDate().toString()+
+                    "\nClose Date: "+account.getCloseDate().get(Calendar.DAY_OF_MONTH) +
+                    "\\"+ account.getCloseDate().get(Calendar.MONTH)+
+                    "\\"+ account.getCloseDate().get(Calendar.YEAR)+
                     "\nPrimary Contact ID: "+account.getPrimaryContactId());
         }
     }
