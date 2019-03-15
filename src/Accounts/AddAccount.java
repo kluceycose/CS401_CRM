@@ -1,4 +1,4 @@
-package view;
+package Accounts;
 
 /**
  *
@@ -11,8 +11,8 @@ package view;
  */
 
 import Menu.MenuItem;
-import model.Account;
-import model.AccountList;
+import Accounts.Account;
+import Accounts.AccountList;
 
 import java.text.DateFormat;
 import java.text.ParseException;

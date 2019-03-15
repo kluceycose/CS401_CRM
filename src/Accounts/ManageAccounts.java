@@ -1,4 +1,4 @@
-package view;
+package Accounts;
 
 /**
  * @author kluceycose
@@ -11,7 +11,6 @@ package view;
 import Menu.Menu;
 import Menu.MenuItem;
 import Menu.MenuStack;
-import model.AccountList;
 
 public class ManageAccounts implements MenuItem {
     Menu mainMenu;
