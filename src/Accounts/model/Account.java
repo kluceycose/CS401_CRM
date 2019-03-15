@@ -9,6 +9,9 @@ package Accounts.model;
  * This class holds all the relevant information for an Account
  */
 
+import Contact.model.Contact;
+import Contact.model.ContactsList;
+
 import java.util.Calendar;
 
 public class Account {
@@ -16,18 +19,18 @@ public class Account {
     private int amount;
     private Calendar closeDate;
     private String accountName;
-    private int primaryContactId;
+    private ContactsList contactsList;
 
     //Constructors
     public Account(){
-        accountId = amount = primaryContactId = -1;
+        accountId = amount = -1;
+        contactsList = new ContactsList();
     }
-    public Account(int _id, int _amount, Calendar _closeDate, String _accountName, int _ContactId){
+    public Account(int _id, int _amount, Calendar _closeDate, String _accountName){
         accountId = _id;
         amount = _amount;
         closeDate = _closeDate;
         accountName = _accountName;
-        primaryContactId = _ContactId;
     }
 
     //Setters
@@ -35,12 +38,12 @@ public class Account {
     public void setAmount(int _amount)              { amount = _amount; }
     public void setCloseDate(Calendar _date)            { closeDate = _date; }
     public void setAccountName(String _name)        { accountName = _name; }
-    public void setPrimaryContactId(int _contactId) { primaryContactId = _contactId; }
+    public void addContact(Contact contact) { contactsList.add(contact); }
 
     //Getters
     public int getAccountId()           { return accountId; }
     public int getAmount()              { return amount; }
     public Calendar getCloseDate()          { return closeDate; }
     public String getAccountName()      { return accountName; }
-    public int getPrimaryContactId()    { return primaryContactId; }
+    public String getPrimaryContact()    { return contactsList.getContactsList().get(0).getName(); }
 }

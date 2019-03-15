@@ -45,14 +45,9 @@ public class AddAccount implements MenuItem {
         date.set(Calendar.MONTH, Integer.parseInt(STDIN.nextLine()));
         System.out.println("Year (yyyy): ");
         date.set(Calendar.YEAR, Integer.parseInt(STDIN.nextLine()));
-        System.out.println("Known contact? (y/n): ");
-        if(STDIN.next().equals("y")){
-                System.out.println("Enter Contact ID: ");
-                contactId = STDIN.nextInt();
-        }
         Account account;
         if(contactId != -1){
-            account = new Account(id, amount, date, name, contactId);
+            account = new Account(id, amount, date, name);
         }
         else{
             account = new Account();
