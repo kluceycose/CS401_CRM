@@ -25,7 +25,7 @@ public class AddContact implements MenuItem {
         String name, email, phone;
         int accountNum;
         Scanner scan = new Scanner(System.in);
-        System.out.println("Accounts:\n");
+        System.out.println("Accounts:");
         AccountsSummary summary = new AccountsSummary(accountList);
         summary.execute();
         System.out.println("Enter account number: ");

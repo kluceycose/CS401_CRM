@@ -16,7 +16,7 @@ public class CRM {
       //Initialize Menus and MenuStack
       MenuStack menus = new MenuStack();
       Menu mainMenu = new Menu("Main Menu", menus);
-      ManageAccounts manageAccounts = new ManageAccounts(mainMenu, menus);
+      ManageAllAccounts manageAccounts = new ManageAllAccounts(mainMenu, menus);
       
         //Adding options to Menu
         mainMenu.addOption(manageAccounts);
