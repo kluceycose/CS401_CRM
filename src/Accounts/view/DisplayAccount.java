@@ -17,7 +17,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class DisplayAccount implements MenuItem {
-    AccountList accountList;
+    private AccountList accountList;
 
     public DisplayAccount(AccountList _accountList){
         accountList = _accountList;
