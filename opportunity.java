@@ -1,14 +1,16 @@
 package Opportunities;
+import java.util.Calendar;
 import java.util.Date;
 
 public class opportunity {
 
 	  private String accountName;
+	    private int opportunityid;
+
 	    private int amount;
-	    private Date closeDate;
+	    private Calendar  closeDate;
 	    private String contract;
 	    private String createdBy;
-	    private String CustomLinks;
 	    private String Description;
 	    private int ExpectedRevenue;
 	    private String OpporutnityName;
@@ -16,15 +18,20 @@ public class opportunity {
 	    private String primaryCampaignSource;
 	    private String Stage;
 	    private String type;
-	    
-	    
+	  // constructor   
+	   public opportunity()
+	   {
+		   amount=-1;
+	   }
+	   
+	   
 	  public opportunity
 	  ( String accountName,
-	  int amount,
+			  int opportunityid,
+	    int amount,
 	    Date closeDate,
 	    String contract,
 	    String createdBy,
-	    String CustomLinks,
 	    String Description,
 	    int ExpectedRevenue,
 	    String OpporutnityName,
@@ -32,12 +39,12 @@ public class opportunity {
 	    String primaryCampaignSource,
 	    String Stage,
 	    String type){
-		  accountName = accountName;	       
+		  accountName = accountName;
+		 opportunityid =opportunityid;
 		  amount= amount;
 				    closeDate=closeDate;
 				     contract=contract;
 				     createdBy=createdBy;
-				     CustomLinks=CustomLinks;
 				     Description=Description;
 				    ExpectedRevenue=ExpectedRevenue;
 				     OpporutnityName=OpporutnityName;
@@ -47,6 +54,16 @@ public class opportunity {
 				     type=type;
 
 	    }
+
+
+	public int getOpportunityid() {
+		return opportunityid;
+	}
+
+
+	public void setOpportunityid(int opportunityid) {
+		this.opportunityid = opportunityid;
+	}
 
 
 	public String getAccountName() {
@@ -69,12 +86,12 @@ public class opportunity {
 	}
 
 
-	public Date getCloseDate() {
+	public Calendar  getCloseDate() {
 		return closeDate;
 	}
 
 
-	public void setCloseDate(Date closeDate) {
+	public void setCloseDate(Calendar  closeDate) {
 		this.closeDate = closeDate;
 	}
 
@@ -99,14 +116,8 @@ public class opportunity {
 	}
 
 
-	public String getCustomLinks() {
-		return CustomLinks;
-	}
 
 
-	public void setCustomLinks(String customLinks) {
-		CustomLinks = customLinks;
-	}
 
 
 	public String getDescription() {

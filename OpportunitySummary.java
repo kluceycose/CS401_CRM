@@ -23,7 +23,10 @@ public class OpportunitySummary implements MenuItem  {
     }
 
     @Override
-    public String toString(){ return "Display a summary list of Accounts"; }
+    public String toString(){ 
+    	return "Display a summary list of Accounts"; 
+    	
+    }
 }
 
-}
+
