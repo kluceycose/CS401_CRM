@@ -32,8 +32,8 @@ public class Menu implements MenuItem{
     public void addOption(MenuItem option){
         options.add(option);
     }
+    //Execute Menu
     @Override
-    //Execute Chosen Option
     public void execute(){
         options.get(getChoice(options)).execute();
     } 

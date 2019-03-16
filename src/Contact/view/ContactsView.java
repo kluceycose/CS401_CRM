@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Menu;
+package Contact.view;
 
 /**
  *
- * @author Jomar
- * Interface to allow for different items in the Menu
+ * @author kenny
+ * 
+ * Interface inherited by views of Contact
  */
-public interface MenuItem {
+public interface ContactsView {
     public void execute();
-    
 }
