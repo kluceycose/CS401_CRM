@@ -8,6 +8,7 @@ package Menu;
 /**
  *
  * @author Jomar
+ * Interface to allow for different items in the Menu
  */
 public interface MenuItem {
     public void execute();
