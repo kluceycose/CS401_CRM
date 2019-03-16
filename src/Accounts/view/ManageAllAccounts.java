@@ -25,7 +25,7 @@ public class ManageAllAccounts implements MenuItem {
 
     public void execute(){
         Menu submenu = new Menu("Accounts", menus);
-        //submenu.add(new ReturnfromMenu(mainMenu.toString(), menus));
+        submenu.addOption(new ReturnfromMenu(mainMenu.toString(), menus));
         submenu.addOption(new AccountsSummary(accountList));
         submenu.addOption(new DisplayAccount(accountList));
         submenu.addOption(new AddAccount(accountList));
