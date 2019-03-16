@@ -21,12 +21,12 @@ ManageAccounts.java<br/>
 
 Contact Model Package Kenny T<br/>
 This package would include all of the Customer classes<br/>
-Customer.java<br/>
-CustomerList.java<br/>
+Contact.java<br/>
+ContactsList.java<br/>
 
 Contacts Console View Package Kenny T<br/>
 This package includes all classes of the menu items that associate with Accounts, including:<br/>
-DisplayCustomers.java<br/>
+DisplayContacts.java<br/>
 In a later version, we will likely implement more features surrounding customers<br/>
 
 User Story HW1:
