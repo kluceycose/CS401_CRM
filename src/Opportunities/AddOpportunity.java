@@ -16,7 +16,7 @@ public class AddOpportunity implements MenuItem {
 public AddOpportunity(opportunityList _OpportunityList)
 {
 
-_OpportunityList =OpportunityList;
+ OpportunityList = _OpportunityList;
 }
 
 public void execute(){
@@ -108,7 +108,7 @@ public void execute(){
 @Override
 public String toString()  
 { 
-	return "Opportunity created"; 
+	return "Create an Opportunity";
 	}
 }
 

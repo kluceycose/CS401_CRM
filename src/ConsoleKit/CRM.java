@@ -6,6 +6,11 @@
 package ConsoleKit;
 import Menu.*;
 import Accounts.view.*;
+import Opportunities.AddOpportunity;
+import Opportunities.DisplayOpportunity;
+import Opportunities.OpportunitySummary;
+import Opportunities.opportunityList;
+import sun.awt.geom.AreaOp;
 
 /**
  *
@@ -16,10 +21,13 @@ public class CRM {
       //Initialize Menus and MenuStack
       MenuStack menus = new MenuStack();
       Menu mainMenu = new Menu("Main Menu", menus);
-      ManageAllAccounts manageAccounts = new ManageAllAccounts(mainMenu, menus);
+      opportunityList opList = new opportunityList();
       
         //Adding options to Menu
-        mainMenu.addOption(manageAccounts);
+        mainMenu.addOption(new ManageAllAccounts(mainMenu, menus));
+        mainMenu.addOption(new OpportunitySummary(opList));
+        mainMenu.addOption(new DisplayOpportunity(opList));
+        mainMenu.addOption(new AddOpportunity(opList));
         mainMenu.addOption(new QuitOption());
         System.out.println("CRM, version 0.1");
         while (true)
