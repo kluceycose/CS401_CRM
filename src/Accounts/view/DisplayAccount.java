@@ -35,7 +35,7 @@ public class DisplayAccount implements MenuItem {
                     "\nClose Date: "+account.getCloseDate().get(Calendar.DAY_OF_MONTH) +
                     "\\"+ account.getCloseDate().get(Calendar.MONTH)+
                     "\\"+ account.getCloseDate().get(Calendar.YEAR)+
-                    "\nPrimary Contact ID: "+account.getPrimaryContactId());
+                    "\nPrimary Contact: "+account.getPrimaryContact());
         }
     }
 

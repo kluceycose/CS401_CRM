@@ -19,6 +19,10 @@ public class ContactsList {
     private final ArrayList<Contact> contactsList;
     private String listName;
 
+    // Default constructor
+    public ContactsList(){
+        contactsList = new ArrayList<>();
+    }
     // Constructor for single Contact
     public ContactsList(Contact contact) {
         contactsList = new ArrayList<>();
