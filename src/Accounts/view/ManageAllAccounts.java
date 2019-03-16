@@ -22,7 +22,7 @@ public class ManageAllAccounts implements MenuItem {
         mainMenu = main;
         menus = stack;
     }
-
+    @Override
     public void execute(){
         Menu submenu = new Menu("Accounts", menus);
         submenu.addOption(new ReturnfromMenu(mainMenu.toString(), menus));

@@ -21,7 +21,7 @@ public class AccountsSummary implements MenuItem {
     public AccountsSummary(AccountList _accountList){
         accountList = _accountList;
     }
-
+    @Override
     public void execute(){
         List<Account> list = accountList.getList();
         for(Account acct: list){
