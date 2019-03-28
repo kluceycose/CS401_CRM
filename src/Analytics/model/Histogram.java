@@ -5,6 +5,8 @@
  */
 package Analytics.model;
 
+import java.util.Map;
+
 /**
  *
  * @author Jomar
@@ -12,6 +14,13 @@ package Analytics.model;
 public class Histogram {
     
     int numberRows;
+    Map data;
+    public Histogram(int numRows, Map _data){
+        numberRows = numRows;
+        data = _data;        
+    }
+            
+    
     
     
 }
