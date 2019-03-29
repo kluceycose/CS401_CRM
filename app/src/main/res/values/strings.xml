@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">CRMApp</string>
+
+    <string name="account_name_label">Account Name</string>
+    <string name="account_name_empty">Enter Account Name</string>
+
+    <string name="account_amount_label">Account Value</string>
+    <string name="account_amount_empty">Enter an Account Value</string>
+
+    <string name="account_close_label">Close Date</string>
+    <string name="account_close_empty">Click to Set Date</string>
+    <string name="date_picker_title">Close Date:</string>
+
+    <string name="account_contact_label">Contact List</string>
+
+    <string name="add_account_button">Add Account</string>
+
+    <string name="contact_name_label">Contact Name</string>
+    <string name="contact_name_empty">Enter name here</string>
+
+    <string name="contact_email_label">Email Address</string>
+    <string name="contact_email_empty">Enter email address here</string>
+
+    <string name="contact_phone_label">Phone Number</string>
+    <string name="contact_phone_empty">Enter phone number here</string>
+
+    <string name="button_add_contact">Add Contact</string>
+
+</resources>
