@@ -31,6 +31,7 @@ public class Account {
         amount = _amount;
         closeDate = _closeDate;
         accountName = _accountName;
+        contactsList = new ContactsList();
     }
 
     //Setters
@@ -45,5 +46,6 @@ public class Account {
     public int getAmount()              { return amount; }
     public Calendar getCloseDate()          { return closeDate; }
     public String getAccountName()      { return accountName; }
+    public ContactsList getContactsList()     { return contactsList; }
     public String getPrimaryContact()    { return contactsList.getContactsList().get(0).getName(); }
 }
