@@ -30,6 +30,9 @@ DisplayContacts.java<br/>
 In a later version, we will likely implement more features surrounding customers<br/>
 
 User Story HW1:
-Sales manager launches application then creates a new account and adds a new contact to the account.<br/>
+1) Sales manager launches application then creates a new account and adds a new contact to the account.<br/>
 Then the sales manager converts a lead into an opportunity.<br/>
 
+User Story HW2:
+1) Sales manager wants to see all of his current accounts and contacts using an Android app.<br/>
+2) Sales manager wants to create a database and store all of his accounts inside.<br/>
