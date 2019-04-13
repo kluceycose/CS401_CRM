@@ -16,10 +16,10 @@ package com.cs401.crmapp.controller.display;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -129,11 +129,15 @@ public class AccountFragment extends Fragment {
             public void onTextChanged(CharSequence s,   // User input
                                       int start, int before, int count) {
                 String newS;
-                if(s.charAt(0)!='$'){ //if user removed '$', add it before changing mAccount
-                    newS = "$"+s.toString();
+                if(s.length()>0){
+                    if(s.charAt(0)!='$'){ //if user removed '$', add it before changing mAccount
+                        newS = "$"+s.toString();
+                    }
+                    else
+                        newS = s.toString();
                 }
                 else
-                    newS = s.toString();
+                    newS = "$";
                 mAccount.setAmount(newS);// set the amount to the users input
             }
 

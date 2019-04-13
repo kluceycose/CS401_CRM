@@ -1,9 +1,9 @@
 package com.cs401.crmapp.controller;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AppCompatActivity;
 import com.cs401.crmapp.R;
 
 public abstract class SingleFragmentActivity extends AppCompatActivity {
@@ -19,4 +19,16 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
             fm.beginTransaction().add(R.id.fragment_container, fragment).commit();
         }
     }
+
+    /*//Convenience methods for Testing
+    public void setFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container, fragment, "TEST")
+                .commit();
+    }
+
+    public void replaceFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment).commit();
+    }*/
 }
