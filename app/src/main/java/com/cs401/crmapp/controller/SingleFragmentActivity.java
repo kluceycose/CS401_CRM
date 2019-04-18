@@ -20,15 +20,15 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
         }
     }
 
-    /*//Convenience methods for Testing
-    public void setFragment(Fragment fragment) {
+    //Convenience methods for Testing
+    /*public void setFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, fragment, "TEST")
                 .commit();
-    }
+    }*/
 
     public void replaceFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment).commit();
-    }*/
+    }
 }

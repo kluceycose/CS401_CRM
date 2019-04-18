@@ -1,17 +1,21 @@
 package com.cs401.crmapp;
 
+import com.cs401.crmapp.controller.display.AccountFragment;
 import com.cs401.crmapp.controller.list.AccountListActivity;
 import com.cs401.crmapp.controller.list.AccountListFragment;
+import com.cs401.crmapp.model.Account;
 import com.cs401.crmapp.model.AccountLab;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import androidx.test.InstrumentationRegistry;
+import java.util.GregorianCalendar;
+import java.util.UUID;
+
 import androidx.test.espresso.Espresso;
-import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
@@ -34,9 +38,19 @@ import static com.cs401.crmapp.TestUtils.atPosition;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class AccountListTest {
+    UUID testId;
     @Rule
     public ActivityTestRule<AccountListActivity> activityRule =
             new ActivityTestRule<>(AccountListActivity.class, true, true);
+
+    @Before
+    public void setUp(){
+        Account account = new Account(
+                "test account", "$1", new GregorianCalendar());
+        testId = account.getId();
+        AccountLab.get(activityRule.getActivity()).getAccounts().add(account);
+        activityRule.getActivity().replaceFragment(new AccountListFragment());
+    }
 
     @Test
     public void checkListDisplay(){
@@ -66,12 +80,20 @@ public class AccountListTest {
         onView(withId(R.id.account_name_field))
                 .perform(typeText("sample account"), closeSoftKeyboard());
         Espresso.pressBack();
-        int position = AccountLab.get(activityRule.getActivity().getBaseContext())
-                            .getAccounts().size()-1;
+        // get position in the list
+        int position = AccountLab.get(activityRule.getActivity())
+                .getAccounts().size()-1;
+        // check if temp account is now shown in correct position in recycler view
         onView(withId(R.id.account_recycler_view))
                 .check(matches(atPosition(
-                        position, hasDescendant(withText(
-                                AccountLab.get(activityRule.getActivity().getBaseContext())
-                                        .getAccounts().get(position).getName())))));
+                        position, hasDescendant(withText("sample account")))));
+        // remove temp account
+        AccountLab.get(activityRule.getActivity()).getAccounts().remove(position);
+    }
+
+    @After
+    public void tearDown(){
+        if(AccountLab.get(activityRule.getActivity()).getAccount(testId)!=null)
+            AccountLab.get(activityRule.getActivity()).getAccounts().remove(testId);
     }
 }

@@ -128,22 +128,21 @@ public class AccountFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s,   // User input
                                       int start, int before, int count) {
-                String newS;
+                String newStr;
                 if(s.length()>0){
                     if(s.charAt(0)!='$'){ //if user removed '$', add it before changing mAccount
-                        newS = "$"+s.toString();
+                        newStr = "$"+s.toString();
                     }
                     else
-                        newS = s.toString();
+                        newStr = s.toString();
                 }
                 else
-                    newS = "$";
-                mAccount.setAmount(newS);// set the amount to the users input
+                    newStr = "$0";
+                mAccount.setAmount(newStr);// set the amount to the users input
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
 
@@ -216,29 +215,35 @@ public class AccountFragment extends Fragment {
             return;
         // if returning from DatePickerFragment, get new Date from the intent
         //  and update mAccount with it
-        if(requestCode == REQUEST_DATE){
-            Date date = (Date)data.getSerializableExtra(
-                    DatePickerFragment.EXTRA_DATE);
-            GregorianCalendar closeDate = new GregorianCalendar();
-            closeDate.setTime(date);
-            mAccount.setCloseDate(closeDate);
-            String closeString = (closeDate.get(Calendar.MONTH)+1) + "/" + closeDate.get(Calendar.DAY_OF_MONTH)+
-                    "/"+closeDate.get(Calendar.YEAR);
-            mDateButton.setText(closeString);
-        }
-        // if returning from ContactFragment, find which Contact to update in
-        //  the list of Contacts from mAccount and update it
-        if(requestCode == REQUEST_CONTACT){
-            Contact contact = (Contact)data.getSerializableExtra(ContactFragment.EXTRA_CONTACT);
-            List<Contact> contactList = mAccount.getContacts();
-            Log.d(TAG, ("incoming id: "+ contact.getId().toString()));
-            for(int i = 0; i< contactList.size(); i++){
-                Log.d(TAG, "old id: "+contactList.get(i).getId().toString());
-                if(contact.getId().equals(contactList.get(i).getId())){
-                    contactList.set(i, contact);
-                    break;
-                }
+        switch(requestCode){
+            case REQUEST_DATE:{
+                Date date = (Date)data.getSerializableExtra(
+                DatePickerFragment.EXTRA_DATE);
+                GregorianCalendar closeDate = new GregorianCalendar();
+                closeDate.setTime(date);
+                mAccount.setCloseDate(closeDate);
+                String closeString = (closeDate.get(Calendar.MONTH)+1) + "/" + closeDate.get(Calendar.DAY_OF_MONTH)+
+                        "/"+closeDate.get(Calendar.YEAR);
+                mDateButton.setText(closeString);
+                return;
             }
+            // if returning from ContactFragment, find which Contact to update in
+            //  the list of Contacts from mAccount and update it
+            case REQUEST_CONTACT:{
+                Contact contact = (Contact)data.getSerializableExtra(ContactFragment.EXTRA_CONTACT);
+                List<Contact> contactList = mAccount.getContacts();
+                Log.d(TAG, ("incoming id: "+ contact.getId().toString()));
+                for(int i = 0; i< contactList.size(); i++){
+                    Log.d(TAG, "old id: "+contactList.get(i).getId().toString());
+                    if(contact.getId().equals(contactList.get(i).getId())){
+                        contactList.set(i, contact);
+                        break;
+                    }
+                }
+                return;
+            }
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
         }
     }
 
