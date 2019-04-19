@@ -1,6 +1,6 @@
 package com.cs401.crmapp.controller.list;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.cs401.crmapp.controller.SingleFragmentActivity;
 

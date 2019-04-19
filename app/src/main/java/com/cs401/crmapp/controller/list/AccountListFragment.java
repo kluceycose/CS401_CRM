@@ -2,9 +2,9 @@ package com.cs401.crmapp.controller.list;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +21,11 @@ import java.util.UUID;
 
 public class AccountListFragment extends Fragment {
     private RecyclerView mAccountRecyclerView;
-    private Button mAddAccountButton;
     private AccountAdapter mAdapter;
+
+    /*public static AccountListFragment newInstance(){
+        return new AccountListFragment();
+    }*/
 
     @Override
     public void onResume(){
@@ -39,7 +42,7 @@ public class AccountListFragment extends Fragment {
         mAccountRecyclerView = (RecyclerView)view.findViewById(R.id.account_recycler_view);
         mAccountRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         updateUI();
-        mAddAccountButton = (Button)view.findViewById(R.id.add_account_button);
+        Button mAddAccountButton = (Button) view.findViewById(R.id.add_account_button);
         mAddAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,7 +87,7 @@ public class AccountListFragment extends Fragment {
 
             mAccountName = (TextView)itemView.findViewById(R.id.account_name_list);
             mAccountAmount = (TextView)itemView.findViewById(R.id.account_amount_list);
-            mCloseDate = (TextView)itemView.findViewById(R.id.close_date_list);
+            mCloseDate = (TextView)itemView.findViewById(R.id.account_close_date_list);
         }
 
         public void bind(Account account){
