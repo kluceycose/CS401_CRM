@@ -61,8 +61,9 @@ public class CreateDatabase implements MenuItem {
                     + " email CHAR(50) PRIMARY KEY, phoneNumber CHAR(20))");
 
             // Create WORKS_FOR Table
-            stat.executeUpdate("CREATE TABLE WORKS_FOR (email CHAR(50) REFERENCES CONTACT(email), "
-                    + "accountId INT REFERENCES ACCOUNT(accountId), "
+            stat.executeUpdate("CREATE TABLE WORKS_FOR "
+                    + "(email CHAR(50) REFERENCES CONTACT(email) ON DELETE CASCADE, "
+                    + "accountId INT REFERENCES ACCOUNT(accountId) ON DELETE CASCADE, "
                     + "PRIMARY KEY (email, accountId))");
 
             // Close connection

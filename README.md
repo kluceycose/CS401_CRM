@@ -36,3 +36,4 @@ Then the sales manager converts a lead into an opportunity.<br/>
 User Story HW2:
 1) Sales manager wants to see all of his current accounts and contacts using an Android app.<br/>
 2) Sales manager wants to create a database and store all of his accounts inside.<br/>
+
