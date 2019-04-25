@@ -6,10 +6,13 @@
 package ConsoleKit;
 import Menu.*;
 import Accounts.view.*;
-import Opportunities.AddOpportunity;
-import Opportunities.DisplayOpportunity;
-import Opportunities.OpportunitySummary;
-import Opportunities.opportunityList;
+import Accounts.model.*;
+import Opportunities.Model.*;
+import Opportunities.View.*;
+import Lead.Model.*;
+import Contact.model.*;
+import Analytics.view.*;
+    
 import sun.awt.geom.AreaOp;
 
 /**
@@ -22,12 +25,21 @@ public class CRM {
       MenuStack menus = new MenuStack();
       Menu mainMenu = new Menu("Main Menu", menus);
       opportunityList opList = new opportunityList();
+      ContactsList clist = new ContactsList();
+      AccountList alist = new AccountList();
+      LeadList llist = new LeadList();
+      
       
         //Adding options to Menu
         mainMenu.addOption(new ManageAllAccounts(mainMenu, menus));
         mainMenu.addOption(new OpportunitySummary(opList));
         mainMenu.addOption(new DisplayOpportunity(opList));
         mainMenu.addOption(new AddOpportunity(opList));
+        mainMenu.addOption(new DisplayContactSales(clist));
+        mainMenu.addOption(new DisplayAccountSales(alist));
+        mainMenu.addOption(new DisplayFailedLeads(llist));
+        
+        
         mainMenu.addOption(new QuitOption());
         System.out.println("CRM, version 0.1");
         while (true)

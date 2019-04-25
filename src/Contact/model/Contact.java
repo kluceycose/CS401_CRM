@@ -17,12 +17,14 @@ public class Contact {
     private String name;
     private String email;
     private String phoneNumber;
+    private int productsBought;
 
     //Constructor
-    public Contact(String name, String email, String phoneNumber) {
+    public Contact(String name, String email, String phoneNumber, String pB) {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.productsBought = pB;
     }
 
     // Getters and Setter below
@@ -54,5 +56,11 @@ public class Contact {
     @Override
     public String toString() {
         return (getName() + " " + getEmail() + " " + getPhoneNumber());
+    }
+    public void setProductsBought(int _productsBought) {
+    this.productsBought = _productsBought;
+    }
+    public int getProductsBought(){
+        return productsBought;
     }
 }

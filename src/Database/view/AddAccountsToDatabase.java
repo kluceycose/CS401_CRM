@@ -20,15 +20,15 @@ import java.sql.SQLException;
 public class AddAccountsToDatabase implements MenuItem {
 
     // URL to where database is created
-    private final String URL;
+    private String URL;
     private final AccountList accountList;
 
-    // Constructor takes current AccountList
+    // Constructor takes current AccountList and sets default URL
     public AddAccountsToDatabase(AccountList accountList) {
         this.accountList = accountList;
         URL = "jdbc:derby://localhost:1527/CRM";
     }
-    
+
     // Constructor takes current AccountList and URL
     public AddAccountsToDatabase(AccountList accountList, String URL) {
         this.accountList = accountList;
@@ -68,7 +68,8 @@ public class AddAccountsToDatabase implements MenuItem {
                 // If it does not exist then insert account
                 if (!(res.next())) {
                     int amount = account.getAmount();
-                    // Convert clostDate to milliseconds
+
+                  // Convert closeDate to milliseconds
                     int closeDate = (int) account.getCloseDate().getTimeInMillis();
                     String accountName = account.getAccountName();
                     ContactsList contactsList = account.getContactsList();
@@ -112,20 +113,27 @@ public class AddAccountsToDatabase implements MenuItem {
             e.printStackTrace();
         }
     }
-    
+
     @Override
     public String toString() {
         return "Add Accounts to Database";
     }
-    
-    // Getters and Setters
 
+    // Getters and Setters
     public String getURL() {
         return URL;
+    }
+
+    public void setURL(String URL) {
+        this.URL = URL;
     }
 
     public AccountList getAccountList() {
         return accountList;
     }
-    
+
+    // Sets URL to default
+    public void defaultURL() {
+        setURL("jdbc:derby://localhost:1527/CRM");
+    }
 }
