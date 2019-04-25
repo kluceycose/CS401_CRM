@@ -2,7 +2,7 @@ package com.cs401.crmapp.controller.display;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.cs401.crmapp.controller.SingleFragmentActivity;
 import com.cs401.crmapp.model.Contact;
